@@ -9,13 +9,22 @@ export default {
 		var requestUrl = `${openweathermapUrl}&q=${encodedLocation}`;
 		return axios.get(requestUrl).then((response)=>{
 			if(response.data.cod && response.data.message){
-				throw new Error(response.data.message);				
+				// throw new Error(response.data.message);				
+				throw new Error("Unable to fetch weather for that location.");				
 			} else {
 				return response.data.main.temp;
 			}
 			// return 
-		}, (response)=>{
+		}
+		// , (response)=>{
+		// 	// console.log(response);
+		// 	throw new Error(response.message);
+		// 	}
+		)
+		.catch((response)=>{
+			console.log(response);
 			throw new Error(response.message);
-		});
+		})
+		;
 	}
 }
