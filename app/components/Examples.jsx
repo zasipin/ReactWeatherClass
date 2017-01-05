@@ -5,7 +5,7 @@ var Examples = React.createClass({
   render: function () {
     return (
     	<div>
-      		<h1 className="text-center">Examples Component!</h1>
+      		<h1 className="text-center page-title">Examples Component!</h1>
       		<p>Here are few examples to try out:</p>
       		<ol>
       			<li>
